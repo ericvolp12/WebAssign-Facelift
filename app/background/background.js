@@ -9,5 +9,12 @@ $(function(){
   $("table").css("border", "none");
   $(":text").addClass("form-control");
   $(":text").css("width", "25%");
-  $(":text").next().html("<div class='input-group-addon'>" + $(":text").next().html()+"</div>");
+  $("body").wrapInner("<div class='panel panel-default'></div>");
+  $("body > center").find("center").wrapAll("<div class='panel-heading'></div>")
+  $("form > table").wrap("<div class='panel-body'></div>");
+  $("form > center").wrap("<div class='panel-footer'></div>");
+  $("form > hr").remove();
+  $(".panel-footer > center > hr").remove();
+  $(".panel-footer").append("<br>");
+  $(".panel-footer").prepend("<br>");
 });
