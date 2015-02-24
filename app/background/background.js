@@ -10,11 +10,16 @@ $(function(){
   $(":text").addClass("form-control");
   $(":text").css("width", "25%");
   $("body").wrapInner("<div class='panel panel-default'></div>");
-  $("body > center").find("center").wrapAll("<div class='panel-heading'></div>")
+  $("panel-default > center").wrapAll("<div class='panel-heading'></div>")
   $("form > table").wrap("<div class='panel-body'></div>");
-  $("form > center").wrap("<div class='panel-footer'></div>");
+  $("body").find("center").each(function(){
+    $(this).wrap("<div class='panel-footer'></div>");
+  });
+  $("body br:lt(4)").remove();
   $("form > hr").remove();
   $(".panel-footer > center > hr").remove();
   $(".panel-footer").append("<br>");
   $(".panel-footer").prepend("<br>");
+  $(".panel-default").prepend("<br>");
+  $(".panel-heading").children().width("85%");
 });
