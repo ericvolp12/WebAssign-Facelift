@@ -1,0 +1,23 @@
+{
+  "manifest_version": 2,
+
+  "name": "WebAssign Facelift",
+  "description": "Changes the layout of Mr. Ringham's Webassign",
+  "version": "1.0",
+  "options_page": "",
+  "permissions": [
+    "storage"
+  ],
+  "browser_action": {
+    "name": "WA Facelift"
+  },
+  "background": {
+    "scripts": ["lib/js/jquery.js"],
+    "persistent": false
+  },
+  "content_scripts": [{
+    "css": ["lib/css/bootstrap.css"],
+    "js": ["lib/js/jquery.js", "background/background.js", "lib/js/bootstrap.min.js"],
+    "matches": ["http://weightroomforyourbrain.com/*"]
+  }]
+}
